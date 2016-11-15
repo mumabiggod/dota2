@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="author" content="fengfan">
+  <title></title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <style>
+  body {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      background-color: #141619;
+    }
+    /*导航条*/
+    
+    .navbar {
+      background-image: url(image/nav-bg.png);
+      background-repeat: repeat-x;
+      height: 77px;
+      border-bottom: 1px solid black;
+    }
+    
+    .nav {
+      margin-left: 60px;
+    }
+    
+    #nav-list>li>a {
+      font-size: 17px;
+      line-height: 30px;
+      height: 60px;
+      padding: 10px;
+      margin: 10px;
+      background-color: transparent;
+      justify-content: center;
+    }
+  }
+  #nav-list .active>a {
+    border-bottom: 3px solid blue;
+  }
+  /*搜索*/
+  .search {
+    position: relative;
+    top: 10px;
+  }
+  .search>input {
+    height: 30px;
+    width: 200px;
+    border-radius: 15px;
+    border: 1px solid lightgray;
+    padding-left: 10px;
+    margin: 11px;
+  }
+  /*横幅*/
+  .banner {
+    height: 480px;
+    background-image: url(image/yslzbj.png);
+    background-size: auto 100%;
+    background-position: center center;
+  }
+  /*正文*/
+  .content {
+    margin-top: -30px;
+  }
+  .content h2 {
+    font-size: 14px;
+    margin: 0px;
+    height: 30px;
+    background-image: url(image/s-bg1.png);
+    background-size: 30px auto;
+    color: white;
+    line-height: 30px;
+    padding-left: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .content>div {
+    height: 240px;
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
+  .content>div>div {
+    height: 210px;
+    border: 1px solid lightgray;
+    padding: 8px;
+    border-top: none;
+    background-color: white;
+  }
+  .content h3 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
+  }
+  .content p {
+    margin: 5px 0px;
+    font-size: 12px;
+  }
+  /*新闻*/
+  .news img {
+    width: 90px;
+  }
+  .news>section {
+    float: right;
+    width: calc(100% - 16px - 90px);
+  }
+  .dotted-bottom {
+    border-bottom: 1px dotted gray;
+    margin-bottom: 5px;
+  }
+  .news>dl>dt {
+    float: left;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 25px;
+  }
+  .news>dl>dd {
+    float: right;
+    font-size: 12;
+  }
+  /*服务*/
+  .service img {
+    width: 100%;
+    height: 80px;
+  }
+  .service>section {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 25px 0;
+  }
+  .service>section>a {
+    width: 46%;
+    height: 25px;
+    background-color: lightgray;
+    margin: 5px 0;
+    line-height: 25px;
+    color: #333;
+  }
+  /*页脚*/
+  footer {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    color: gray;
+  }
+  footer span {
+    line-height: 50px;
+  }
+  footer nav {
+    line-height: 50px;
+  }
+  footer nav a {
+    color: gray;
+    padding-left: 15px;
+  }
+  button {
+    padding: 0px;
+  }
+  image {
+    background-image: url(wycz.png);
+  }
+  button {
+    border: none;
+  }
+  #yxzy {
+    padding-left: 45px;
+  }
+  h3 {
+    color: wheat;
+    margin-top: 60px;
+  }
+  #xinwen {
+    color: #999999;
+  }
+  .nav-tabs>a {
+    padding: 0 43px;
+  }
+  #xw {
+    font-size: 15px;
+  }
+  #xw .nav-tabs a {
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    color: #999999;
+    height: 40px;
+    line-height: 40px;
+    margin-right: -5px;
+  }
+  /*#xw .nav-tabs li a:hover
+  {
+    color: white;
+  }*/
+  #xw .nav-tabs a:hover {
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+  }
+  .nav-tabs {
+    border: none;
+  }
+  #xw .nav-tabs a {
+    border: 1px solid gray;
+  }
+  dd {
+    float: left;
+    font-size: 17px;
+    margin: 10px 0px;
+  }
+  dt {
+    float: right;
+    font-size: 12px;
+  }
+  .xinw>a {
+    color: #CCCCCC;
+    background-color: red !important;
+  }
+  .xinw>a>dt {
+    color: #999999;
+  }
+  .xinw>a:hover {
+    color: #00C0FF;
+  }
+  #heianzhimen:hover
+  {
+     box-shadow: 0 0 8px lightgreen;
+  }
+  #heianzhimen
+  {
+    height: 225px;
+    /*padding-top: 50px;*/
+  }
+  
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a href="#"><img src="image/logo.png" alt=""></a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse navbar-left">
+        <ul class="nav navbar-nav" id='nav-list'>
+          <li class="active"><a href="#">首页</a></li>
+          <li><a href="#media">主播视频</a></li>
+          <li><a href="#about">关于DOTA</a></li>
+          <li><a href="#contact">战队视频</a></li>
+          <li><a href="#canpinfuwu">背后交易</a></li>
+        </ul>
+      </div>
+      <div class='search navbar-right visible-lg-block'>
+        <input type="text" placeholder='Seach here...'>
+      </div>
+    </div>
+  </nav>
+  <div class="banner"></div>
+  <!--正文-->
+  <div class="container">
+    <div class="row">
+      <!--左2/3-->
+      <div class="col-lg-8">
+        <button><img src="wycz.png" alt=""></button>
+        <button><img src="yxxz.png" alt=""></button>
+        <button><img src="zhzc.png" alt=""></button>
+      </div>
+      <!--右2/3-->
+      <div class="col-lg-4" style='padding: 0px;'>
+        <div id=yxzy>
+          <button><img src="yxzl.png" alt=""></button>
+          <button><img src="wpzl.png" alt=""></button>
+          <button><img src="sbcw.png" alt=""></button>
+          <button><img src="lj.png" alt=""></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--新闻和赛事-->
+  <div class="container">
+    <div class="row">
+      <div id='xw' class="col-lg-8">
+        <h3><span class="glyphicon glyphicon-inbox"></span>&#x3000;新闻中心</h3>
+        <ul class="nav nav-tabs" role="tablist" style='margin-left: 0px;'>
+          <a href="#zhxw" data-toggle="tab">
+            <li role="presentation">综合新闻</li>
+          </a>
+          <a href="#gfxw" data-toggle="tab">
+            <li role="presentation">官方新闻</li>
+          </a>
+          <a href="#ssxx" data-toggle="tab">
+            <li role="presentation">赛事信息</li>
+          </a>
+          <a href="#gxrz" data-toggle="tab">
+            <li role="presentation">更新日志</li>
+          </a>
+          <a href="#gxz" data-toggle="tab">
+            <li role="presentation">更新日志</li>
+          </a>
+        </ul>
+        <div class="tab-content" style='color: white'>
+          <div role="tabpanel" class="tab-pane active" id="zhxw">
+            <div id='heianzhimen'>
+              <a href='#' id="men" style='text-decoration: none;'>
+                <h3 style="color: #00C0FF; padding:17px;">料理之门打开，新英雄下面使者降临DOTA2!</h3>
+                <div>
+                <div class="col-lg-4">
+                  <div><img src="x8.png" alt=""></div>
+                </div>
+                <div class="col-lg-8">
+                  <p style="color: #999999">英雄简介：    召唤成波深渊之焰，焚祭在恶意掌控中无力还手的敌人。战斗的屠戮是场盛宴，敌人的消亡将会带来力量，他们的攻势在你面前不值一提。<br>有情有义：我的兄弟都很强，攻击力+10（光环）。<br>西恩深渊：用自己的努力改变这个圈子，使敌方无法移动。<br>假退光环：是下面使者在小地图和大地图不可见，直到TI来临。<br>吾面ru吃：下面使者的终极奥义，我下面很好吃！</p>
+                </div>
+                </div>
+            
+            </a>
+            </div>
+            <dl class='xinw' style="margin-top: 15px;">
+              <a href="#">
+                <dd>恭喜THY（头很硬）战队成为史上第一支包揽整年所有比赛冠军的队伍！</dd>
+                <dt>2017-12-12</dt>
+                <div class="clearfix"></div>
+              </a>
+              <a href="">
+                <dd>THY队长木马：无敌是多么寂寞！</dd>
+                <dt>2012-02-02</dt>
+                <div class="clearfix"></div>
+              </a>
+              <a href="">
+                <dd>EG：不知道为什么，每次和THY打，还没选英雄，我就觉得这把我们输了。</dd>
+                <dt>2012-02-02</dt>
+                <div class="clearfix"></div>
+              </a>
+              <a href="">
+                <dd>THY队员茄子：一场比赛我不送个二三十个都不舒服。</dd>
+                <dt>2012-02-02</dt>
+                <div class="clearfix"></div>
+              </a>
+              <a href="">
+                <dd>EESAMA：你听说过3154吗？</dd>
+                <dt>2017-31-54</dt>
+                <div class="clearfix"></div>
+              </a>
+              <a href="">
+                <dd>2009：在THY面前，我的大局观不值一提。</dd>
+                <dt>2012-02-02</dt>
+                <div class="clearfix"></div>
+              </a>
+              <a href="">
+                <dd>天佑：每次我不送几个，我们队长就会把头给我按金显示器。</dd>
+                <dt>2012-02-02</dt>
+                <div class="clearfix"></div>
+              </a>
+            </dl>
+          </div>
+          
+
+          <div role="tabpanel" class="tab-pane" id="gfxw">..sd .</div>
+          <div role="tabpanel" class="tab-pane" id="ssxx">...</div>
+          <div role="tabpanel" class="tab-pane" id="gxrz">...</div>
+          <div role="tabpanel" class="tab-pane" id="gxz">...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <span class='navbar-left'>Copyright 2004-2012 Seetthru Co.,Ltd.All right reserved</span>
+      <nav class='navbar-right'>
+        <a herf="#">网站地图</a>
+        <a herf="#">关于DOTA</a>
+        <a herf="#">工作机会</a>
+        <a herf="#">法律声明</a>
+        <a herf="#">友情链接</a>
+      </nav>
+    </div>
+  </footer>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
